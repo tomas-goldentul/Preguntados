@@ -20,29 +20,18 @@ commandType: CommandType.StoredProcedure)
 return Categorias;
 }
 
-    public List<Dificultades> ObtenerDificultades()
-    {
-        List<Dificultades> Dificultades = new List<Dificultades>();
-        using (SqlConnection connection = new SqlConnection(_connectionString))
-        {
-            string query = "EXEC ObtenerDificultades";
-            Dificultades = connection.Query<Dificultades>(query).ToList();
-        }
-        return Dificultades;
-    }
-
-    public List<Categorias> ObtenerDificultades ()
+    public List<Dificultades> ObtenerDificultades ()
 {
-List<Categorias> Categorias = null;
+List<Dificultades> Dificultades = null;
 using (SqlConnection connection = new SqlConnection(_connectionString))
 {
-string storedProcedure = "ObtenerCategorias";
-Categorias =
-connection.Query<Categorias>(storedProcedure,
+string storedProcedure = "ObtenerDificultades";
+Dificultades =
+connection.Query<Dificultades>(storedProcedure,
 commandType: CommandType.StoredProcedure)
 .ToList();
 }
-return Categorias;
+return Dificultades;
 }
 
     public List<Preguntas> ObtenerPreguntas(int dificultad, int categoria)
