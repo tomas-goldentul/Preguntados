@@ -1,4 +1,4 @@
-class Preguntas
+public class Preguntas
 {
     public int IDcategoria { get; set; }
     public int IDpregunta { get; set; }

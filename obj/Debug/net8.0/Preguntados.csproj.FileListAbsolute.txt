@@ -1,0 +1,9 @@
+C:\Users\49319223\Downloads\Preguntados\obj\Debug\net8.0\Preguntados.csproj.AssemblyReference.cache
+C:\Users\49319223\Downloads\Preguntados\obj\Debug\net8.0\Preguntados.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\49319223\Downloads\Preguntados\obj\Debug\net8.0\Preguntados.AssemblyInfoInputs.cache
+C:\Users\49319223\Downloads\Preguntados\obj\Debug\net8.0\Preguntados.AssemblyInfo.cs
+C:\Users\49319223\Downloads\Preguntados\obj\Debug\net8.0\Preguntados.csproj.CoreCompileInputs.cache
+C:\Users\49319223\Downloads\Preguntados\obj\Debug\net8.0\Preguntados.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\49319223\Downloads\Preguntados\obj\Debug\net8.0\Preguntados.RazorAssemblyInfo.cache
+C:\Users\49319223\Downloads\Preguntados\obj\Debug\net8.0\Preguntados.RazorAssemblyInfo.cs
+C:\Users\49319223\Downloads\Preguntados\obj\Debug\net8.0\Preguntados.sourcelink.json

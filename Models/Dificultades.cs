@@ -1,4 +1,4 @@
-class Dificultades
+public class Dificultades
 {
     public int IDdificultad { get; set; }
     public string Nombre { get; set; }

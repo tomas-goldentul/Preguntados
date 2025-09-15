@@ -2,7 +2,7 @@ using Microsoft.Data.SqlClient;
 using Dapper;
 using System.Data;
 
-class BD
+public class BD
 {
     private static string _connectionString = @"Server=localhost;
 DataBase TP08_Goldentul_Gartenkrot; Integrated Security=True; TrustServerCertificate=True;";
@@ -34,26 +34,31 @@ commandType: CommandType.StoredProcedure)
 return Dificultades;
 }
 
-    public List<Preguntas> ObtenerPreguntas(int dificultad, int categoria)
-    {
-        List<Preguntas> Preguntas = new List<Preguntas>();
-        using (SqlConnection connection = new SqlConnection(_connectionString))
-        {
-            string query = "EXEC ObtenerPreguntas";
-            Preguntas = connection.Query<Preguntas>(query, new { pDificultad = dificultad, pCategoria = categoria }).ToList();
-        }
-        return Preguntas;
-    }
-
-    public List<Respuestas> ObtenerProximasRespuestas(int IDpregunta)
-    {
-        List<Respuestas> Respuestas = new List<Respuestas>();
-        using (SqlConnection connection = new SqlConnection(_connectionString))
-        {
-            string query = "EXEC ObtenerProximasRespuestas";
-            Respuestas = connection.Query<Respuestas>(query, new { pIDpregunta = IDpregunta}).ToList();
-        }
-        return Respuestas;
-    }
+public List<Preguntas> ObtenerPreguntas (int Dificultad, int Categoria)
+{
+List<Preguntas> Preguntas = null;
+using (SqlConnection connection = new SqlConnection(_connectionString))
+{
+string storedProcedure = "ObtenerPreguntas";
+Preguntas =
+connection.Query<Preguntas>(storedProcedure, new { pIDdificultad = IDdificultad, pIDcategoria = IDcategoria},
+commandType: CommandType.StoredProcedure)
+.ToList();
+}
+return Preguntas;
+}
+public List<Respuestas> ObtenerProximasRespuestas (int idPregunta)
+{
+List<Respuestas> Respuestas = null;
+using (SqlConnection connection = new SqlConnection(_connectionString))
+{
+string storedProcedure = "ObtenerProximasRespuestas";
+Respuestas =
+connection.Query<Respuestas>(storedProcedure, new { pIDpregunta = IDpregunta},
+commandType: CommandType.StoredProcedure)
+.ToList();
+}
+return Respuestas;
+}
 
 }
