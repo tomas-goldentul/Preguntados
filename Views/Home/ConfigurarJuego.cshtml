@@ -1,0 +1,22 @@
+@ViewBag.Dificultades;
+@ViewBag.Categorias;
+<form action = '@Url.Action("ConfigurarJuego")' method = "GET" id = "Configuracion">
+<input type = "radio" name = "Dificultad" value = "-1"required id = "dificultad">Todas las dificultades
+<input type = "radio" name = "Dificultad" value = "1" required id = "dificultad">1
+<input type = "radio" name = "Dificultad" value = "2"required id = "dificultad">2
+<input type = "radio" name = "Dificultad" value = "3"required id = "dificultad">3
+</form>
+
+<form action = '@Url.Action("ConfigurarJuego")' method = "GET" ID = "Configuracion">
+<input type = "radio" name = "Categoria" value = "-1"required id = "categoria">Todas las categorias
+<input type = "radio" name = "Categoria" value = "1" required id = "categoria">1
+<input type = "radio" name = "Categoria" value = "2"required id = "categoria">2
+<input type = "radio" name = "Categoria" value = "3"required id = "categoria">3
+</form>
+
+<form action = '@Url.Action("ConfigurarJuego")' method = "GET" ID = "Configuracion">
+<input id = "" type = "text" name = "username" required placeholder ="ingrese su username">
+
+</form>
+
+<a href = '@Url.Action("Juego")' style = "display: none;">Iniciar</a>

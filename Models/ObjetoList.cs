@@ -1,5 +1,5 @@
 using Newtonsoft.Json;
-public static class Objetos
+public static class ObjetoList
 {
     public static string ListToString<T>(List<T> lista)
     {

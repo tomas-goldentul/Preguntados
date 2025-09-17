@@ -3,7 +3,7 @@ public class Juego{
     private int puntuajeActual;
     private int cantidadPreguntasCorrectas;
     private int contadorNroPreguntaActual;
-    private Preguntas PreguntaActual  = new Preguntas();
+    private Preguntas PreguntaActual;
     private List<Preguntas> ListaPreguntas;
     private List<Respuestas> ListaRespuestas;
 
@@ -12,7 +12,7 @@ public Juego(){
     int puntuajeActual;
     int cantidadPreguntasCorrectas;
     int contadorNroPreguntaActual;
-    Preguntas PreguntaActual = new Preguntas();
+    Preguntas PreguntaActual = new Preguntas(0, 0, 0, null, null);
     List<Preguntas> ListaPreguntas = new List<Preguntas>();
     List<Respuestas> ListaRespuestas = new List<Respuestas>();
 }
@@ -39,7 +39,7 @@ private void InicializarJuego(){
         return BD.ObtenerProximasRespuestas(idPregunta);
     }
     public bool VerificarRespuesta(int IDrespuesta){
-        bool correcta;
+        bool correcta = false;
         foreach(Respuestas respuesta in ListaRespuestas){
             if (respuesta.IDrespuesta == IDrespuesta){
                 correcta = respuesta.Correcta;
@@ -50,11 +50,10 @@ private void InicializarJuego(){
             cantidadPreguntasCorrectas++;
         }
         contadorNroPreguntaActual++;
-        ObtenerProximaPregunta();
         return correcta;
     }
-    public void ObtenerProximaPregunta(){
+    public Preguntas ObtenerProximaPregunta(){
         PreguntaActual = ListaPreguntas[contadorNroPreguntaActual];
-        ObtenerProximasRespuestas(PreguntaActual.IDpregunta);
+        return PreguntaActual;
     }
 }

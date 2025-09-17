@@ -6,6 +6,7 @@ namespace Preguntados.Controllers;
 
 public class HomeController : Controller
 {
+    Juego juego = new Juego();
     private readonly ILogger<HomeController> _logger;
 
     public HomeController(ILogger<HomeController> logger)
@@ -19,26 +20,27 @@ public class HomeController : Controller
     }
     public IActionResult ConfigurarJuego()
     {
-        ViewBag.ObtenerDificultades();
-        ViewBag.ObtenerCategorias();
+        ViewBag.Dificultades = BD.ObtenerDificultades();
+        ViewBag.Categorias = BD.ObtenerCategorias();
         return View();
     }
     public IActionResult Comenzar(string username, int dificultad, int categoria)
     {
-        Juego.CargarPartida(username, dificultad, categoria);
         HttpContext.Session.SetString("user", username);
         HttpContext.Session.SetInt32("dificultad", dificultad);
         HttpContext.Session.SetInt32("categoria", categoria);
+        juego.CargarPartida(username, dificultad, categoria);
+
        return RedirectToAction("Jugar");
     }
     public IActionResult Jugar()
     {
-        Preguntas PreguntaActual = Juego.ObtenerProximaPregunta();
+        Preguntas PreguntaActual = juego.ObtenerProximaPregunta();
         HttpContext.Session.SetString("preguntaActual", Objeto.ObjectToString(PreguntaActual));
         if (PreguntaActual != null)
         {
-                List<Respuestas> proximasRespuestas = Juego.ObtenerProximasRespuestas(idPregunta);
-                HttpContext.Session.SetString("proximasRespuestas", ObjetoList.ListToString(proximasRespuestas));
+            List<Respuestas> proximasRespuestas = juego.ObtenerProximasRespuestas(PreguntaActual.IDpregunta);
+            HttpContext.Session.SetString("proximasRespuestas", ObjetoList.ListToString(proximasRespuestas));
             return RedirectToAction("Jugar");
         }
         else
@@ -47,7 +49,8 @@ public class HomeController : Controller
         }
     }
     [HttpPost]
-    public IActionResult VerificarRespuesta(int idRespuesta){
+    public IActionResult VerificarRespuesta(int idRespuesta)
+    {
         ViewBag.VerificarRespuesta(idRespuesta);
         return View("respuesta");
     }

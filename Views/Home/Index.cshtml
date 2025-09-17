@@ -1,8 +1,13 @@
-﻿@{
+@{
     ViewData["Title"] = "Index";
 }
 
-<div>
-    <h1>Index</h1>
-    <p>Bienvenidos al sitio web de NombreProyecto</p>
+<div class = "menu">
+    <h1>¡Bienvenido a nuestro Preguntados!</h1>
+    <nav>
+        <ul>
+            <li><a href = '@Url.Action("ConfigurarJuego")'>Configurar el juego</a></li>
+            <li><a href = '@Url.Action("Creditos")'>Créditos</a></li>
+        </ul>
+    </nav>
 </div>
