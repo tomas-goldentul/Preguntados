@@ -26,6 +26,7 @@ public class HomeController : Controller
     }
     public IActionResult Comenzar(string username, int dificultad, int categoria)
     {
+        HttpContext.Session.SetString("partida", username, dificultad, categoria);
         HttpContext.Session.SetString("user", username);
         HttpContext.Session.SetInt32("dificultad", dificultad);
         HttpContext.Session.SetInt32("categoria", categoria);
@@ -35,18 +36,25 @@ public class HomeController : Controller
     }
     public IActionResult Jugar()
     {
+        ViewBag.user = HttpContext.Session.GetString("user");
         Preguntas PreguntaActual = juego.ObtenerProximaPregunta();
+        ViewBag.preguntaActual = PreguntaActual;
         HttpContext.Session.SetString("preguntaActual", Objeto.ObjectToString(PreguntaActual));
         if (PreguntaActual != null)
         {
             List<Respuestas> proximasRespuestas = juego.ObtenerProximasRespuestas(PreguntaActual.IDpregunta);
             HttpContext.Session.SetString("proximasRespuestas", ObjetoList.ListToString(proximasRespuestas));
-            return RedirectToAction("Jugar");
+            ViewBag.proximasRespuestas = proximasRespuestas;
+            return View();
         }
         else
         {
            return RedirectToAction("Fin");
         }
+    }
+    public IActionResult CargarPartida(string username){
+        ViewBag.user = HttpContext.Session.GetString("user");
+        
     }
     [HttpPost]
     public IActionResult VerificarRespuesta(int idRespuesta)
