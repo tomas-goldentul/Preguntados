@@ -2,11 +2,12 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Preguntados.Models;
 
+
 namespace Preguntados.Controllers;
 
 public class HomeController : Controller
 {
-    Juego juego = new Juego();
+    
     private readonly ILogger<HomeController> _logger;
 
     public HomeController(ILogger<HomeController> logger)
@@ -16,6 +17,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        Juego juego = new Juego();
+        HttpContext.Session.SetString("juego", Objeto.ObjectToString(juego));
         return View();
     }
     public IActionResult ConfigurarJuego()
@@ -24,18 +27,19 @@ public class HomeController : Controller
         ViewBag.Categorias = BD.ObtenerCategorias();
         return View();
     }
-    public IActionResult Comenzar(string username, int dificultad, int categoria)
+    public IActionResult Comenzar(string User, int dificultad, int categoria)
     {
-        HttpContext.Session.SetString("partida", username, dificultad, categoria);
-        HttpContext.Session.SetString("user", username);
+        Juego juego = Objeto.StringToObject<Juego>(HttpContext.Session.GetString("juego"));
+        HttpContext.Session.SetString("user", User);
         HttpContext.Session.SetInt32("dificultad", dificultad);
         HttpContext.Session.SetInt32("categoria", categoria);
-        juego.CargarPartida(username, dificultad, categoria);
+        juego.CargarPartida(User, dificultad, categoria);
 
-       return RedirectToAction("Jugar");
+        return RedirectToAction("Jugar");
     }
     public IActionResult Jugar()
     {
+        Juego juego = Objeto.StringToObject<Juego>(HttpContext.Session.GetString("juego"));
         ViewBag.user = HttpContext.Session.GetString("user");
         Preguntas PreguntaActual = juego.ObtenerProximaPregunta();
         ViewBag.preguntaActual = PreguntaActual;
@@ -49,13 +53,10 @@ public class HomeController : Controller
         }
         else
         {
-           return RedirectToAction("Fin");
+            return RedirectToAction("Fin");
         }
     }
-    public IActionResult CargarPartida(string username){
-        ViewBag.user = HttpContext.Session.GetString("user");
-        
-    }
+    
     [HttpPost]
     public IActionResult VerificarRespuesta(int idRespuesta)
     {

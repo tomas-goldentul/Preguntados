@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IkxmMn53a/ysv20v5gAOkBET3p+yBmVS9dOlHmOMIuA=",
+  "Hash": "FNJQbQWachL640okNzLdMNYhnJF9TDs4sIq2piJCRgE=",
   "Source": "Preguntados",
   "BasePath": "_content/Preguntados",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\49319223\\Downloads\\Preguntados\\wwwroot\\BD_PROG.sql",
+      "SourceId": "Preguntados",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\49319223\\Downloads\\Preguntados\\wwwroot\\",
+      "BasePath": "_content/Preguntados",
+      "RelativePath": "BD_PROG.sql",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BD_PROG.sql"
+    },
     {
       "Identity": "C:\\Users\\49319223\\Downloads\\Preguntados\\wwwroot\\css\\site.css",
       "SourceId": "Preguntados",

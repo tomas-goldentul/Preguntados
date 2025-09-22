@@ -1,6 +1,9 @@
 
 <p>@ViewBag.user</p>
-<p>@ViewBag.preguntaActual</p>
-<p>@ViewBag.proximasRespuestas</p>
-<p></p>
+<p>@ViewBag.preguntaActual.Enunciado</p>
 
+<form action = '@Url.Action("VerificarRespuesta")' method = "POST">
+@foreach(var respuesta in ViewBag.ProximasRespuestas){
+    <input type ="radio" name = "Respuesta" value ="@respuesta.IdRespuesta">@respuesta.Contenido
+}
+</form>
