@@ -111,7 +111,7 @@ public class HomeController : Controller
         return RedirectToAction("Index");
 
     ViewBag.Username = juego.Username ?? "Invitado";
-    ViewBag.Puntaje = juego.PuntajeActual; // siempre un int
+    ViewBag.Puntaje = juego.PuntuajeActual ;
 
     return View();
 }

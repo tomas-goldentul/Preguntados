@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\49319223\\Downloads\\Preguntados\\Preguntados.csproj": {}
+    "C:\\Users\\48792944\\Downloads\\Preguntados\\Preguntados.csproj": {}
   },
   "projects": {
-    "C:\\Users\\49319223\\Downloads\\Preguntados\\Preguntados.csproj": {
+    "C:\\Users\\48792944\\Downloads\\Preguntados\\Preguntados.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\49319223\\Downloads\\Preguntados\\Preguntados.csproj",
+        "projectUniqueName": "C:\\Users\\48792944\\Downloads\\Preguntados\\Preguntados.csproj",
         "projectName": "Preguntados",
-        "projectPath": "C:\\Users\\49319223\\Downloads\\Preguntados\\Preguntados.csproj",
-        "packagesPath": "C:\\Users\\49319223\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\49319223\\Downloads\\Preguntados\\obj\\",
+        "projectPath": "C:\\Users\\48792944\\Downloads\\Preguntados\\Preguntados.csproj",
+        "packagesPath": "C:\\Users\\48792944\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\48792944\\Downloads\\Preguntados\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\49319223\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\48792944\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

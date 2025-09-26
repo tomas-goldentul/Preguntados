@@ -6,14 +6,14 @@ public class Juego
     private int puntuajeActual;
     private int cantidadPreguntasCorrectas;
     private int contadorNroPreguntaActual;
-    private Preguntas? PreguntaActual;
-    private List<Preguntas>? ListaPreguntas;
-    private List<Respuestas>? ListaRespuestas;
+    private Preguntas PreguntaActual;
+    private List<Preguntas> ListaPreguntas;
+    private List<Respuestas> ListaRespuestas;
 
     public Juego()
     {
         // Inicializar directamente los campos de clase (no variables locales)
-        username = string.Empty;
+        username = "";
         puntuajeActual = 0;
         cantidadPreguntasCorrectas = 0;
         contadorNroPreguntaActual = 0;
