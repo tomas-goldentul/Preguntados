@@ -1,15 +1,24 @@
-
-<form action = '@Url.Action("ConfigurarJuego")' method = "GET" id = "Configuracion">
-<input type = "radio" name = "Dificultad" value = "-1"required id = "dificultad"/>Todas las dificultades
-<input type = "radio" name = "Dificultad" value = "1" required id = "dificultad"/>1
-<input type = "radio" name = "Dificultad" value = "2"required id = "dificultad"/>2
-<input type = "radio" name = "Dificultad" value = "3"required id = "dificultad"/>3
-<input type = "radio" name = "Categoria" value = "-1"required id = "categoria"/>Todas las categorias
-<input type = "radio" name = "Categoria" value = "1" required id = "categoria"/>1
-<input type = "radio" name = "Categoria" value = "2"required id = "categoria"/>2
-<input type = "radio" name = "Categoria" value = "3"required id = "categoria"/>3
-<input id = "User" type = "text" name = "username" required placeholder ="ingrese su username"/>
-<button type = "submit" value = "1" name = "enviar" onclick = "revisarConfiguracion()" id = "enviado">Enviar</button>
+<form action='@Url.Action("Comenzar")' method="POST" id="Configuracion">
+    <fieldset>
+        <legend>Dificultad:</legend>
+        <label><input type="radio" name="Dificultad" value="-1" required /> Todas las dificultades</label><br>
+        <label><input type="radio" name="Dificultad" value="1" required /> 1</label><br>
+        <label><input type="radio" name="Dificultad" value="2" required /> 2</label><br>
+        <label><input type="radio" name="Dificultad" value="3" required /> 3</label><br>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Categoría:</legend>
+        <label><input type="radio" name="Categoria" value="-1" required /> Todas las categorías</label><br>
+        <label><input type="radio" name="Categoria" value="1" required /> 1</label><br>
+        <label><input type="radio" name="Categoria" value="2" required /> 2</label><br>
+        <label><input type="radio" name="Categoria" value="3" required /> 3</label><br>
+    </fieldset>
+    
+    <div>
+        <label for="User">Nombre de usuario:</label>
+        <input type="text" name="User" required id="User" placeholder="Ingrese su username" />
+    </div>
+    
+    <button type="submit">Comenzar Juego</button>
 </form>
-
-<a href = '@Url.Action("Comenzar")'  style = "display: none;" id = "botonJuego">Iniciar</a>

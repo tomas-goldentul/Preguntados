@@ -2,14 +2,12 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Preguntados.Models;
 
-
 namespace Preguntados.Controllers;
 
 public class HomeController : Controller
 {
-    
     private readonly ILogger<HomeController> _logger;
-
+    
     public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
@@ -21,31 +19,70 @@ public class HomeController : Controller
         HttpContext.Session.SetString("juego", Objeto.ObjectToString(juego));
         return View();
     }
+    
     public IActionResult ConfigurarJuego()
     {
         ViewBag.Dificultades = BD.ObtenerDificultades();
         ViewBag.Categorias = BD.ObtenerCategorias();
         return View();
     }
-    public IActionResult Comenzar(string User, int dificultad, int categoria)
+
+    [HttpPost]
+    public IActionResult Comenzar(int Dificultad, int Categoria, string User)
     {
-        Juego juego = Objeto.StringToObject<Juego>(HttpContext.Session.GetString("juego"));
-        HttpContext.Session.SetString("user", User);
-        HttpContext.Session.SetInt32("dificultad", dificultad);
-        HttpContext.Session.SetInt32("categoria", categoria);
-        juego.CargarPartida(User, dificultad, categoria);
+        if (string.IsNullOrEmpty(User))
+        {
+            return BadRequest("El nombre de usuario no puede estar vacío.");
+        }
+
+        Partida partida = new Partida(Categoria, Dificultad, User);
+        
+        string? juegoString = HttpContext.Session.GetString("juego");
+
+        if (string.IsNullOrEmpty(juegoString))
+        {
+            return BadRequest("No se encontró el objeto 'juego' en la sesión.");
+        }
+
+        Juego? juego = Objeto.StringToObject<Juego>(juegoString);
+        if (juego == null)
+        {
+            return BadRequest("Error al deserializar el juego.");
+        }
+
+        HttpContext.Session.SetString("user", partida.username);
+        HttpContext.Session.SetInt32("dificultad", partida.dificultad);
+        HttpContext.Session.SetInt32("categoria", partida.categoria);
+
+        juego.CargarPartida(partida.username, partida.dificultad, partida.categoria);
+        
+        // Guardar el juego actualizado en la sesión
+        HttpContext.Session.SetString("juego", Objeto.ObjectToString(juego));
 
         return RedirectToAction("Jugar");
     }
+
     public IActionResult Jugar()
     {
-        Juego juego = Objeto.StringToObject<Juego>(HttpContext.Session.GetString("juego"));
+        string? juegoString = HttpContext.Session.GetString("juego");
+        if (string.IsNullOrEmpty(juegoString))
+        {
+            return RedirectToAction("Index");
+        }
+
+        Juego? juego = Objeto.StringToObject<Juego>(juegoString);
+        if (juego == null)
+        {
+            return RedirectToAction("Index");
+        }
+
         ViewBag.user = HttpContext.Session.GetString("user");
-        Preguntas PreguntaActual = juego.ObtenerProximaPregunta();
+        Preguntas? PreguntaActual = juego.ObtenerProximaPregunta();
         ViewBag.preguntaActual = PreguntaActual;
-        HttpContext.Session.SetString("preguntaActual", Objeto.ObjectToString(PreguntaActual));
+        
         if (PreguntaActual != null)
         {
+            HttpContext.Session.SetString("preguntaActual", Objeto.ObjectToString(PreguntaActual));
             List<Respuestas> proximasRespuestas = juego.ObtenerProximasRespuestas(PreguntaActual.IDpregunta);
             HttpContext.Session.SetString("proximasRespuestas", ObjetoList.ListToString(proximasRespuestas));
             ViewBag.proximasRespuestas = proximasRespuestas;
@@ -56,11 +93,28 @@ public class HomeController : Controller
             return RedirectToAction("Fin");
         }
     }
-    
+
     [HttpPost]
     public IActionResult VerificarRespuesta(int idRespuesta)
     {
         ViewBag.VerificarRespuesta(idRespuesta);
         return View("respuesta");
     }
+  public IActionResult Fin()
+{
+    string? juegoString = HttpContext.Session.GetString("juego");
+    if (string.IsNullOrEmpty(juegoString))
+        return RedirectToAction("Index");
+
+    Juego? juego = Objeto.StringToObject<Juego>(juegoString);
+    if (juego == null)
+        return RedirectToAction("Index");
+
+    ViewBag.Username = juego.Username ?? "Invitado";
+    ViewBag.Puntaje = juego.PuntajeActual; // siempre un int
+
+    return View();
+}
+
+
 }

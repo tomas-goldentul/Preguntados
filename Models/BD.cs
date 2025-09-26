@@ -34,31 +34,29 @@ DataBase = TP08_Goldentul_Gartenkrot; Integrated Security=True; TrustServerCerti
         return Dificultades;
     }
 
-    public static List<Preguntas> ObtenerPreguntas(int Dificultad, int Categoria)
+    public static List<Preguntas> ObtenerPreguntas(int dificultad, int categoria)
+{
+    using (SqlConnection connection = new SqlConnection(_connectionString))
     {
-        List<Preguntas> Preguntas = null;
-        using (SqlConnection connection = new SqlConnection(_connectionString))
-        {
-            string storedProcedure = "ObtenerPreguntas";
-            Preguntas =
-            connection.Query<Preguntas>(storedProcedure, new { pIDdificultad = Dificultad, pIDcategoria = Categoria },
-            commandType: CommandType.StoredProcedure)
-            .ToList();
-        }
-        return Preguntas;
+        return connection.Query<Preguntas>(
+            "ObtenerPreguntas",
+            new { dificultad = dificultad, categoria = categoria },
+            commandType: CommandType.StoredProcedure
+        ).ToList();
     }
-    public static List<Respuestas> ObtenerProximasRespuestas(int IDpregunta)
+}
+
+    public static List<Respuestas> ObtenerProximasRespuestas(int idPregunta)
+{
+    using (SqlConnection connection = new SqlConnection(_connectionString))
     {
-        List<Respuestas> Respuestas = null;
-        using (SqlConnection connection = new SqlConnection(_connectionString))
-        {
-            string storedProcedure = "ObtenerProximasRespuestas";
-            Respuestas =
-            connection.Query<Respuestas>(storedProcedure, new { pIDpregunta = IDpregunta },
-            commandType: CommandType.StoredProcedure)
-            .ToList();
-        }
-        return Respuestas;
+        return connection.Query<Respuestas>(
+            "ObtenerProximasRespuestas",
+            new { idPregunta = idPregunta },
+            commandType: CommandType.StoredProcedure
+        ).ToList();
     }
+}
+
 
 }
