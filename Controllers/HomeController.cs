@@ -97,8 +97,25 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult VerificarRespuesta(int idRespuesta)
     {
-        ViewBag.VerificarRespuesta(idRespuesta);
-        return View("respuesta");
+        string? juegoString = HttpContext.Session.GetString("juego");
+        if (string.IsNullOrEmpty(juegoString))
+        {
+            return RedirectToAction("Index");
+        }
+
+        Juego? juego = Objeto.StringToObject<Juego>(juegoString);
+        if (juego == null)
+        {
+            return RedirectToAction("Index");
+        }
+
+        bool esCorrecta = juego.VerificarRespuesta(idRespuesta);
+        ViewBag.esCorrecta = esCorrecta;
+        
+        // Guardar el juego actualizado en la sesión
+        HttpContext.Session.SetString("juego", Objeto.ObjectToString(juego));
+        
+        return View("Respuesta");
     }
   public IActionResult Fin()
 {

@@ -1,9 +1,22 @@
 
-<p>@ViewBag.user</p>
-<p>@ViewBag.preguntaActual.Enunciado</p>
-
-<form action = '@Url.Action("VerificarRespuesta")' method = "POST">
-@foreach(var respuesta in ViewBag.ProximasRespuestas){
-    <input type ="radio" name = "Respuesta" value ="@respuesta.IdRespuesta">@respuesta.Contenido
+@{
+    ViewData["Title"] = "Jugar";
 }
-</form>
+
+<div class="text-center">
+    <h2>Jugador: @ViewBag.user</h2>
+    <h3>@ViewBag.preguntaActual.Enunciado</h3>
+
+    <form action='@Url.Action("VerificarRespuesta")' method="POST">
+        @foreach(var respuesta in ViewBag.proximasRespuestas)
+        {
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="idRespuesta" value="@respuesta.IDrespuesta" id="respuesta_@respuesta.IDrespuesta" required>
+                <label class="form-check-label" for="respuesta_@respuesta.IDrespuesta">
+                    @respuesta.Contenido
+                </label>
+            </div>
+        }
+        <button type="submit" class="btn btn-primary mt-3">Responder</button>
+    </form>
+</div>

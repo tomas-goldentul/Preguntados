@@ -6,7 +6,7 @@ using System.Data;
 public static class BD
 {
     private static string _connectionString = @"Server=localhost;
-DataBase = TP08_Goldentul_Gartenkrot; Integrated Security=True; TrustServerCertificate=True;";
+Database=TP08_Goldentul_Gartenkrot; Integrated Security=True; TrustServerCertificate=True;";
     public static List<Categorias> ObtenerCategorias()
     {
         List<Categorias> Categorias = null;
