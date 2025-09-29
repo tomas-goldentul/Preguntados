@@ -3,46 +3,46 @@
     ViewData["Title"] = "Configurar Juego";
 }
 
-<div class="container">
+<div>
     <h2>Configurar Juego</h2>
-    
+
     <form action='@Url.Action("Comenzar")' method="POST" id="Configuracion">
-        <fieldset class="mb-3">
+        <fieldset>
             <legend>Dificultad:</legend>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="Dificultad" value="-1" id="dif_todas" required />
-                <label class="form-check-label" for="dif_todas">Todas las dificultades</label>
+            <div>
+                <input type="radio" name="Dificultad" value="-1" id="dif_todas" required />
+                <label for="dif_todas">Todas las dificultades</label>
             </div>
             @foreach(var dificultad in ViewBag.Dificultades)
             {
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Dificultad" value="@dificultad.IDdificultad" id="dif_@dificultad.IDdificultad" required />
-                    <label class="form-check-label" for="dif_@dificultad.IDdificultad">@dificultad.Nombre</label>
+                <div>
+                    <input type="radio" name="Dificultad" value="@dificultad.IDdificultad" id="dif_@dificultad.IDdificultad" required />
+                    <label for="dif_@dificultad.IDdificultad">@dificultad.Nombre</label>
                 </div>
             }
         </fieldset>
-        
-        <fieldset class="mb-3">
+
+        <fieldset>
             <legend>Categoría:</legend>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="Categoria" value="-1" id="cat_todas" required />
-                <label class="form-check-label" for="cat_todas">Todas las categorías</label>
+            <div>
+                <input type="radio" name="Categoria" value="-1" id="cat_todas" required />
+                <label for="cat_todas">Todas las categorías</label>
             </div>
             @foreach(var categoria in ViewBag.Categorias)
             {
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Categoria" value="@categoria.IDcategoria" id="cat_@categoria.IDcategoria" required />
-                    <label class="form-check-label" for="cat_@categoria.IDcategoria">@categoria.Nombre</label>
+                <div>
+                    <input type="radio" name="Categoria" value="@categoria.IDcategoria" id="cat_@categoria.IDcategoria" required />
+                    <label for="cat_@categoria.IDcategoria">@categoria.Nombre</label>
                 </div>
             }
         </fieldset>
-        
-        <div class="mb-3">
-            <label for="User" class="form-label">Nombre de usuario:</label>
-            <input type="text" name="User" required id="User" class="form-control" placeholder="Ingrese su username" />
+
+        <div>
+            <label for="User">Nombre de usuario:</label>
+            <input type="text" name="User" required id="User" placeholder="Ingrese su username" />
         </div>
-        
-        <button type="submit" class="btn btn-success">Comenzar Juego</button>
+
+        <button type="submit">Comenzar Juego</button>
     </form>
 </div>
 </body>
