@@ -7,7 +7,7 @@ namespace Preguntados.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    
+
     public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
@@ -19,7 +19,7 @@ public class HomeController : Controller
         HttpContext.Session.SetString("juego", Objeto.ObjectToString(juego));
         return View();
     }
-    
+
     public IActionResult ConfigurarJuego()
     {
         ViewBag.Dificultades = BD.ObtenerDificultades();
@@ -36,7 +36,7 @@ public class HomeController : Controller
         }
 
         Partida partida = new Partida(Categoria, Dificultad, User);
-        
+
         string? juegoString = HttpContext.Session.GetString("juego");
 
         if (string.IsNullOrEmpty(juegoString))
@@ -55,7 +55,7 @@ public class HomeController : Controller
         HttpContext.Session.SetInt32("categoria", partida.categoria);
 
         juego.CargarPartida(partida.username, partida.dificultad, partida.categoria);
-        
+
         // Guardar el juego actualizado en la sesión
         HttpContext.Session.SetString("juego", Objeto.ObjectToString(juego));
 
@@ -79,7 +79,7 @@ public class HomeController : Controller
         ViewBag.user = HttpContext.Session.GetString("user");
         Preguntas? PreguntaActual = juego.ObtenerProximaPregunta();
         ViewBag.preguntaActual = PreguntaActual;
-        
+
         if (PreguntaActual != null)
         {
             HttpContext.Session.SetString("preguntaActual", Objeto.ObjectToString(PreguntaActual));
@@ -99,39 +99,43 @@ public class HomeController : Controller
     {
         string? juegoString = HttpContext.Session.GetString("juego");
         if (string.IsNullOrEmpty(juegoString))
-        {
             return RedirectToAction("Index");
-        }
 
         Juego? juego = Objeto.StringToObject<Juego>(juegoString);
         if (juego == null)
-        {
             return RedirectToAction("Index");
+
+        // Recuperar la pregunta actual desde la sesión
+        string? preguntaActualString = HttpContext.Session.GetString("preguntaActual");
+        if (!string.IsNullOrEmpty(preguntaActualString))
+        {
+            juego.PreguntaActual = Objeto.StringToObject<Preguntas>(preguntaActualString);
         }
 
         bool esCorrecta = juego.VerificarRespuesta(idRespuesta);
         ViewBag.esCorrecta = esCorrecta;
-        
+
         // Guardar el juego actualizado en la sesión
         HttpContext.Session.SetString("juego", Objeto.ObjectToString(juego));
-        
+
         return View("Respuesta");
     }
-  public IActionResult Fin()
-{
-    string? juegoString = HttpContext.Session.GetString("juego");
-    if (string.IsNullOrEmpty(juegoString))
-        return RedirectToAction("Index");
 
-    Juego? juego = Objeto.StringToObject<Juego>(juegoString);
-    if (juego == null)
-        return RedirectToAction("Index");
+    public IActionResult Fin()
+    {
+        string? juegoString = HttpContext.Session.GetString("juego");
+        if (string.IsNullOrEmpty(juegoString))
+            return RedirectToAction("Index");
 
-    ViewBag.Username = juego.Username ?? "Invitado";
-    ViewBag.Puntaje = juego.PuntuajeActual ;
+        Juego? juego = Objeto.StringToObject<Juego>(juegoString);
+        if (juego == null)
+            return RedirectToAction("Index");
 
-    return View();
-}
+        ViewBag.Username = juego.Username ?? "Invitado";
+        ViewBag.Puntaje = juego.PuntuajeActual;
+
+        return View();
+    }
 
 
 }

@@ -74,7 +74,7 @@ public class Juego
                 if (respuesta.IDrespuesta == IDrespuesta)
                 {
                     correcta = respuesta.Correcta;
-                    break; // Salir del loop una vez encontrada
+                    break;
                 }
             }
         }
@@ -98,10 +98,8 @@ public class Juego
         if (ListaPreguntas != null && contadorNroPreguntaActual < ListaPreguntas.Count)
         {
             PreguntaActual = ListaPreguntas[contadorNroPreguntaActual];
-            System.Diagnostics.Debug.WriteLine($"Pregunta obtenida: {PreguntaActual?.Enunciado}");
             return PreguntaActual;
         }
-        System.Diagnostics.Debug.WriteLine("No hay más preguntas o ListaPreguntas es null");
         return null; // No hay más preguntas
     }
 
