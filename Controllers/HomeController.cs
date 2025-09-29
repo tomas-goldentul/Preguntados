@@ -63,36 +63,43 @@ public class HomeController : Controller
     }
 
     public IActionResult Jugar()
+{
+    string? juegoString = HttpContext.Session.GetString("juego");
+    if (string.IsNullOrEmpty(juegoString))
     {
-        string? juegoString = HttpContext.Session.GetString("juego");
-        if (string.IsNullOrEmpty(juegoString))
-        {
-            return RedirectToAction("Index");
-        }
-
-        Juego? juego = Objeto.StringToObject<Juego>(juegoString);
-        if (juego == null)
-        {
-            return RedirectToAction("Index");
-        }
-
-        ViewBag.user = HttpContext.Session.GetString("user");
-        Preguntas? PreguntaActual = juego.ObtenerProximaPregunta();
-        ViewBag.preguntaActual = PreguntaActual;
-
-        if (PreguntaActual != null)
-        {
-            HttpContext.Session.SetString("preguntaActual", Objeto.ObjectToString(PreguntaActual));
-            List<Respuestas> proximasRespuestas = juego.ObtenerProximasRespuestas(PreguntaActual.IDpregunta);
-            HttpContext.Session.SetString("proximasRespuestas", ObjetoList.ListToString(proximasRespuestas));
-            ViewBag.proximasRespuestas = proximasRespuestas;
-            return View();
-        }
-        else
-        {
-            return RedirectToAction("Fin");
-        }
+        return RedirectToAction("Index");
     }
+
+    Juego? juego = Objeto.StringToObject<Juego>(juegoString);
+    if (juego == null)
+    {
+        return RedirectToAction("Index");
+    }
+
+    ViewBag.user = HttpContext.Session.GetString("user");
+    Preguntas? PreguntaActual = juego.ObtenerProximaPregunta();
+    ViewBag.preguntaActual = PreguntaActual;
+
+    if (PreguntaActual != null)
+    {
+        HttpContext.Session.SetString("preguntaActual", Objeto.ObjectToString(PreguntaActual));
+
+        // Mezclar las respuestas para que las correctas no aparezcan de primera opcion
+        List<Respuestas> proximasRespuestas = juego.ObtenerProximasRespuestas(PreguntaActual.IDpregunta);
+        Random rng = new Random();
+        proximasRespuestas = proximasRespuestas.OrderBy(r => rng.Next()).ToList();
+
+        HttpContext.Session.SetString("proximasRespuestas", ObjetoList.ListToString(proximasRespuestas));
+        ViewBag.proximasRespuestas = proximasRespuestas;
+
+        return View();
+    }
+    else
+    {
+        return RedirectToAction("Fin");
+    }
+}
+
 
     [HttpPost]
     public IActionResult VerificarRespuesta(int idRespuesta)
@@ -105,7 +112,6 @@ public class HomeController : Controller
         if (juego == null)
             return RedirectToAction("Index");
 
-        // Recuperar la pregunta actual desde la sesión
         string? preguntaActualString = HttpContext.Session.GetString("preguntaActual");
         if (!string.IsNullOrEmpty(preguntaActualString))
         {
@@ -115,7 +121,6 @@ public class HomeController : Controller
         bool esCorrecta = juego.VerificarRespuesta(idRespuesta);
         ViewBag.esCorrecta = esCorrecta;
 
-        // Guardar el juego actualizado en la sesión
         HttpContext.Session.SetString("juego", Objeto.ObjectToString(juego));
 
         return View("Respuesta");

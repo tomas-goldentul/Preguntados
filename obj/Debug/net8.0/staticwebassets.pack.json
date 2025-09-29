@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\49319223\\Downloads\\Preguntados\\wwwroot\\imagenes\\FondoPreguntados.avif",
+      "PackagePath": "staticwebassets\\imagenes\\FondoPreguntados.avif"
+    },
+    {
+      "Id": "C:\\Users\\49319223\\Downloads\\Preguntados\\wwwroot\\imagenes\\logo.png",
+      "PackagePath": "staticwebassets\\imagenes\\logo.png"
+    },
+    {
       "Id": "C:\\Users\\49319223\\Downloads\\Preguntados\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
