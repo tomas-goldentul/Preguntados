@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+GlqB3VpMK3eQlTbSz9nFf+LBBbynzbadpJG+3UA1wI=",
+  "Hash": "0dz9LUO5m7C2VutZG1sJNOOJdr+AL4WQEDm0mGFLwkY=",
   "Source": "Preguntados",
   "BasePath": "_content/Preguntados",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Preguntados\\wwwroot",
       "Source": "Preguntados",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\BD_PROG.sql",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\BD_PROG.sql",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "BD_PROG.sql",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\BD_PROG.sql"
     },
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\css\\site.css",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\favicon.ico",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -74,10 +74,29 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\imagenes\\FondoMenu.jpg",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\imagenes\\confeti.gif",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
+      "BasePath": "_content/Preguntados",
+      "RelativePath": "imagenes/confeti.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagenes\\confeti.gif"
+    },
+    {
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\imagenes\\FondoMenu.jpg",
+      "SourceId": "Preguntados",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "imagenes/FondoMenu.jpg",
       "AssetKind": "All",
@@ -93,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\FondoMenu.jpg"
     },
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\imagenes\\logo.png",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\imagenes\\logo.png",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "imagenes/logo.png",
       "AssetKind": "All",
@@ -112,10 +131,29 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\logo.png"
     },
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\imagenes\\nubes.jpg",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\imagenes\\manuel.png",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
+      "BasePath": "_content/Preguntados",
+      "RelativePath": "imagenes/manuel.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagenes\\manuel.png"
+    },
+    {
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\imagenes\\nubes.jpg",
+      "SourceId": "Preguntados",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "imagenes/nubes.jpg",
       "AssetKind": "All",
@@ -131,10 +169,29 @@
       "OriginalItemSpec": "wwwroot\\imagenes\\nubes.jpg"
     },
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\imagenes\\tomas.png",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
+      "BasePath": "_content/Preguntados",
+      "RelativePath": "imagenes/tomas.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagenes\\tomas.png"
+    },
+    {
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\js\\site.js",
+      "SourceId": "Preguntados",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -150,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -169,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -188,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -207,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -226,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -245,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -264,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -283,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -302,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -321,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -340,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -359,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Preguntados",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48792944\\Downloads\\Preguntados\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\golde\\Downloads\\Preguntados\\wwwroot\\",
       "BasePath": "_content/Preguntados",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
