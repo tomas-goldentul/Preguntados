@@ -2,8 +2,9 @@
 @{
     ViewData["Title"] = "Jugar";
 }
-
+<h1>@ViewBag.puntaje</h1>
 <div class="text-center">
+    
     <h3>@ViewBag.preguntaActual.Enunciado</h3>
 
     <form action='@Url.Action("VerificarRespuesta")' method="POST">

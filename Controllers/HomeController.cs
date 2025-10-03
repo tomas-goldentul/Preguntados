@@ -79,6 +79,7 @@ public class HomeController : Controller
     ViewBag.user = HttpContext.Session.GetString("user");
     Preguntas? PreguntaActual = juego.ObtenerProximaPregunta();
     ViewBag.preguntaActual = PreguntaActual;
+    ViewBag.puntuaje = juego.puntuajeActual;
 
     if (PreguntaActual != null)
     {
@@ -91,7 +92,6 @@ public class HomeController : Controller
 
         HttpContext.Session.SetString("proximasRespuestas", ObjetoList.ListToString(proximasRespuestas));
         ViewBag.proximasRespuestas = proximasRespuestas;
-
         return View();
     }
     else
@@ -141,6 +141,7 @@ public class HomeController : Controller
 
         return View();
     }
-
-
+    public IActionResult Creditos(){
+        return View();
+    }
 }
