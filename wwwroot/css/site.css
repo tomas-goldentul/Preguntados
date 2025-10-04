@@ -16,15 +16,28 @@ body {
 }
 
 footer {
-  transform: translate(-21px, 60px);
-  width: 102.5%;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   background-color: #0000007c;
   backdrop-filter: blur(10px);
-  border: 1px solid white;
-  margin-top: 14%;
-  padding: 10px;
+  border-top: 1px solid white;
   color: white !important;
   box-shadow: #ffffff 0px 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+footer .container {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 
@@ -245,13 +258,15 @@ footer {
   margin-bottom: 20px;
 }
 
-.opciones fieldset {
+.opciones .dificultad,
+.opciones .categoria {
   flex: 1;
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
   min-width: 250px;
   margin-top: 4%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .configuracion h2 {
@@ -259,8 +274,11 @@ footer {
 
 }
 
-.configuracion legend {
+.opciones h3 {
+  color: white;
   font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
 }
 
 .opciones label {
@@ -330,8 +348,31 @@ background: linear-gradient(135deg, #3a3f5c, #5c667d);
   font-weight: normal;
 }
 
-
-
+.puntaje-fijo{
+  position: fixed;
+  top: 170px;
+  left: 70px;
+  background-color: #0000007c;
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid white;
+  box-shadow: #ffffff 0px 0px 30px;
+}
+.juego-container{
+  color: white!important;
+  transform: translateY(100px);
+  text-align: center;
+  padding: 2rem;
+  background-color: #0000007c;
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  border: 1px solid white;
+  box-shadow: #ffffff 0px 0px 30px;
+}
+.juego-container h3{
+  color: white!important;
+}
 
 .bodyJuego {
   background: conic-gradient(#ff6384 0deg 60deg,
@@ -343,7 +384,30 @@ background: linear-gradient(135deg, #3a3f5c, #5c667d);
   background-attachment: fixed;
   background-size: cover;
 }
-
+.fin-body{
+  background: conic-gradient(#66c70c 0deg 60deg,
+      #3eb310 60deg 120deg,
+      #3e961b  120deg 180deg,
+      #64a849  180deg 240deg,
+      #498b2e  240deg 300deg,
+      #60ac42  300deg 360deg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+.fin-container{
+  transform: translateY(100px);
+  background-color: #0000007c;
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 30px;
+  border: 1px solid white;
+  box-shadow: #ffffff 0px 0px 30px;
+}
+.fin-container h3{
+  font-size: 2rem;
+  font-weight: 900;
+  color:#aa443d!important;
+}
 .resultadoCorrecto {
   background: linear-gradient(135deg, #28a745, #78ffd6);
   background-attachment: fixed;
